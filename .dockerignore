@@ -1,0 +1,11 @@
+# Git & local configs
+.git
+.gitignore
+docker-compose.yml
+nginx.conf
+.dockerignore
+README.md
+
+# OS junk
+.DS_Store
+Thumbs.db
