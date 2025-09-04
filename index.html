@@ -1,495 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Karoline's Portfolio</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        :root {
-            --primary-color: #E9CACE;
-            --secondary-color: #3D3030;
-            --background-color: #F5F5F5;
-            --text-color: #6E6662;
-            --accent-color: #9C9B7C;
-            --light-bg: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .hero {
-            padding: 4rem 0;
-            text-align: center;
-            background-color: var(--light-bg);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        .portfolio-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 4rem;
-            justify-content: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            flex: 1 1 300px;
-            max-width: calc(33.333% - 2rem);
-            min-width: 250px;
-            background: var(--light-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-item-content {
-            display: none;
-        }
-
-        .video-section {
-            padding: 4rem 0;
-            background: var(--light-bg);
-        }
-
-        .video-section .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .video-section h3 {
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .video-section p {
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-container {
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
-
-        .video-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .video-item {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .video-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-item h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .video-item p {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-        }
-
-        .video-item a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .video-item a:hover {
-            color: var(--secondary-color);
-        }
-
-        .video-meta {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .video-preview {
-            width: 100%;
-            max-width: 400px;
-            margin: 1rem auto;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .video-preview img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .articles-section {
-            padding: 4rem 0;
-            background: var(--light-bg);
-        }
-
-        .articles-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .article-item {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .article-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .article-item h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .article-item p {
-            color: var(--text-color);
-            margin-bottom: 1rem;
-        }
-
-        .article-item a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .article-item a:hover {
-            color: var(--secondary-color);
-        }
-
-        .article-meta {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            text-align: center;
-            margin: 3rem 0 2rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        header h2 {
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-            margin: 1rem 0 0;
-            padding-bottom: 0;
-        }
-
-        header h2::after {
-            display: none;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            margin: auto;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-color);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .close-modal:hover {
-            transform: rotate(90deg);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .portfolio-item {
-                max-width: 100%;
-            }
-
-            .close-modal {
-                top: 10px;
-                right: 10px;
-            }
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="container">
-            <h1>Welcome to My Portfolio</h1>
-            <h2>Journalistic photography and videography with an artistic touch</h2>
-        </div>
+      <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <h2>Journalistic photography and videography with an artistic touch</h2>
+      </div>
     </header>
 
     <h2>Photography</h2>
 
     <section class="portfolio-grid">
-        <div class="portfolio-item">
-            <img src="assets/images/img1.jpg" alt="Portfolio Item 1">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/img2.jpg" alt="Portfolio Item 2">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/img3.jpg" alt="Portfolio Item 3">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/img4.jpg" alt="Portfolio Item 4">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/img5.jpg" alt="Portfolio Item 5">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/img6.jpg" alt="Portfolio Item 6">
-        </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img1.jpg" alt="Portfolio Item 1" />
+      </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img2.jpg" alt="Portfolio Item 2" />
+      </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img3.jpg" alt="Portfolio Item 3" />
+      </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img4.jpg" alt="Portfolio Item 4" />
+      </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img5.jpg" alt="Portfolio Item 5" />
+      </div>
+      <div class="portfolio-item">
+        <img src="assets/images/img6.jpg" alt="Portfolio Item 6" />
+      </div>
     </section>
 
     <div class="modal" id="imageModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img id="modalImage" src="" alt="Enlarged view">
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged view" />
+      </div>
     </div>
 
     <h2>Videography</h2>
 
     <section class="video-grid">
-        <div class="video-item">
-            <h3>Orgasme kan gjøre dagen bedre</h3>
-            <p>Ny dansk studie viser at det er en sammenheng mellom sexleketøy og hvor lykkelig man er.</p>
-            <div class="video-meta">Bymag • 23.02.2024</div>
-            <a href="https://www.bymag.no/sex-sexlektoy/orgasme-kan-gjore-dagen-bedre/103600" target="_blank">Watch Video →</a>
-        </div>
-        <div class="video-item">
-            <h3>Slange på frifot i Fyllingsdalen</h3>
-            <p>På lørdag fikk politiet en telefon om en tre meter lang boaslange på en balkong i Fyllingsdalen. Hendelsen kan bety døden for slangen.</p>
-            <div class="video-meta">Bymag • 21.03.2024</div>
-            <a href="https://www.bymag.no/akvariet-slange/slange-pa-frifot-i-fyllingsdalen/111276" target="_blank">Watch Video →</a>
-        </div>
+      <div class="video-item">
+        <h3>Kjendiser i Bergen</h3>
+        <p>Dette må kjendisene alltid gjøre i Bergen</p>
+        <blockquote
+          class="tiktok-embed"
+          cite="https://www.tiktok.com/@bergens.tidende/video/7542530105973820694"
+          data-video-id="7542530105973820694"
+          style="max-width: 605px; min-width: 325px"
+        >
+          <section>
+            <a
+              target="_blank"
+              title="@bergens.tidende"
+              href="https://www.tiktok.com/@bergens.tidende?refer=embed"
+              >@bergens.tidende</a
+            >
+            Dette må kjendisene alltid gjøre i Bergen 🪩🛍️⛰️
+            <a
+              title="fløyen"
+              target="_blank"
+              href="https://www.tiktok.com/tag/fl%C3%B8yen?refer=embed"
+              >#fløyen</a
+            >
+            <a
+              title="bergen"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bergen?refer=embed"
+              >#bergen</a
+            >
+            <a
+              title="laksevåg"
+              target="_blank"
+              href="https://www.tiktok.com/tag/laksev%C3%A5g?refer=embed"
+              >#laksevåg</a
+            >
+            <a
+              title="kjendis"
+              target="_blank"
+              href="https://www.tiktok.com/tag/kjendis?refer=embed"
+              >#kjendis</a
+            >
+            <a
+              title="kevinlauren"
+              target="_blank"
+              href="https://www.tiktok.com/tag/kevinlauren?refer=embed"
+              >#kevinlauren</a
+            >
+            <a
+              title="randulle"
+              target="_blank"
+              href="https://www.tiktok.com/tag/randulle?refer=embed"
+              >#randulle</a
+            >
+            <a
+              title="leahbehn"
+              target="_blank"
+              href="https://www.tiktok.com/tag/leahbehn?refer=embed"
+              >#leahbehn</a
+            >
+            <a
+              title="bt"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bt?refer=embed"
+              >#bt</a
+            >
+            <a
+              title="btnyheter"
+              target="_blank"
+              href="https://www.tiktok.com/tag/btnyheter?refer=embed"
+              >#btnyheter</a
+            >
+            <a
+              title="bergenstidende"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bergenstidende?refer=embed"
+              >#bergenstidende</a
+            >
+            <a
+              target="_blank"
+              title="♬ original sound  - BT"
+              href="https://www.tiktok.com/music/original-sound-BT-7542530124908677910?refer=embed"
+              >♬ original sound - BT</a
+            >
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+        <div class="video-meta">@bergens.tidende • TikTok • 25.05.2025</div>
+        <a
+          href="https://www.tiktok.com/@bergens.tidende/video/7542530105973820694"
+        >
+          Se på Tik Tok →
+        </a>
+      </div>
+      <div class="video-item">
+        <h3>Gry står uten bolig</h3>
+        <p>Fem-dobling av studenter uten bolig i Bergen</p>
+        <blockquote
+          class="tiktok-embed"
+          cite="https://www.tiktok.com/@bergens.tidende/video/7541415605296057622"
+          data-video-id="7541415605296057622"
+          style="max-width: 605px; min-width: 325px"
+        >
+          <section>
+            <a
+              target="_blank"
+              title="@bergens.tidende"
+              href="https://www.tiktok.com/@bergens.tidende?refer=embed"
+              >@bergens.tidende</a
+            >
+            Har du funnet deg leiebolig i Bergen enda?🏡
+            <a
+              title="bolig"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bolig?refer=embed"
+              >#bolig</a
+            >
+            <a
+              title="bergen"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bergen?refer=embed"
+              >#bergen</a
+            >
+            <a
+              title="btnyheter"
+              target="_blank"
+              href="https://www.tiktok.com/tag/btnyheter?refer=embed"
+              >#btnyheter</a
+            >
+            <a
+              title="btno"
+              target="_blank"
+              href="https://www.tiktok.com/tag/btno?refer=embed"
+              >#btno</a
+            >
+            <a
+              title="bergenstidende"
+              target="_blank"
+              href="https://www.tiktok.com/tag/bergenstidende?refer=embed"
+              >#bergenstidende</a
+            >
+            <a
+              target="_blank"
+              title="♬ original sound - BT"
+              href="https://www.tiktok.com/music/original-sound-7541415602914921238?refer=embed"
+              >♬ original sound - BT</a
+            >
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+        <div class="video-meta">@bergens.tidende • TikTok • 22.05.2025</div>
+        <a
+          href="https://www.tiktok.com/@bergens.tidende/video/7541415605296057622"
+        >
+          Se på Tik Tok →
+        </a>
+      </div>
+      <div class="video-item">
+        <h3>Orgasme kan gjøre dagen bedre</h3>
+        <p>
+          Ny dansk studie viser at det er en sammenheng mellom sexleketøy og
+          hvor lykkelig man er.
+        </p>
+        <div class="video-meta">Bymag • 23.02.2024</div>
+        <a
+          href="https://www.bymag.no/sex-sexlektoy/orgasme-kan-gjore-dagen-bedre/103600"
+          target="_blank"
+          >Se på Bymag →</a
+        >
+      </div>
+      <div class="video-item">
+        <h3>Slange på frifot i Fyllingsdalen</h3>
+        <p>
+          På lørdag fikk politiet en telefon om en tre meter lang boaslange på
+          en balkong i Fyllingsdalen. Hendelsen kan bety døden for slangen.
+        </p>
+        <div class="video-meta">Bymag • 21.03.2024</div>
+        <a
+          href="https://www.bymag.no/akvariet-slange/slange-pa-frifot-i-fyllingsdalen/111276"
+          target="_blank"
+          >Se på Bymag →</a
+        >
+      </div>
     </section>
 
     <section class="video-section">
-        <div class="container">
-            <h3>Portfolio Showcase</h3>
-            <p>A selection of my recent work showcasing journalistic storytelling and creative videography techniques.</p>
-            <div class="video-container">
-                <video controls>
-                    <source src="assets/videos/portfolio-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+      <div class="container">
+        <h3>Portfolio Showcase</h3>
+        <p>
+          A selection of my recent work showcasing journalistic storytelling and
+          creative videography techniques.
+        </p>
+        <div class="video-container">
+          <video controls>
+            <source src="assets/videos/portfolio-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Karoline Nilsen. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 Karoline Nilsen. All rights reserved.</p>
+      </div>
     </footer>
+  </body>
 
-    <script>
-        // Modal functionality
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.querySelector('.close-modal');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src;
-                modalImg.src = imgSrc;
-                modal.classList.add('active');
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        });
-
-        document.querySelectorAll('.portfolio-item').forEach((el) => observer.observe(el));
-    </script>
-</body>
-
+  <script src="./index.js"  > </script>
 </html>
