@@ -10,44 +10,55 @@
   <body>
     <header>
       <div class="container">
-        <h1>Welcome to My Portfolio</h1>
-        <h2>Journalistic photography and videography with an artistic touch</h2>
+        <h1>
+          Welcome to My Portfolio<br />
+          <span>
+            Journalistic photography and videography with an artistic touch
+          </span>
+        </h1>
       </div>
     </header>
-
-    <h2>Photography</h2>
-
-    <section class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="assets/images/img1.jpg" alt="Portfolio Item 1" />
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/images/img2.jpg" alt="Portfolio Item 2" />
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/images/img3.jpg" alt="Portfolio Item 3" />
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/images/img4.jpg" alt="Portfolio Item 4" />
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/images/img5.jpg" alt="Portfolio Item 5" />
-      </div>
-      <div class="portfolio-item">
-        <img src="assets/images/img6.jpg" alt="Portfolio Item 6" />
-      </div>
-    </section>
-
-    <div class="modal" id="imageModal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <img id="modalImage" src="" alt="Enlarged view" />
-      </div>
-    </div>
 
     <h2>Videography</h2>
 
     <section class="video-grid">
+      <div class="video-item">
+        <h3>Fryser du?</h3>
+        <div class="video-container">
+          <video controls>
+            <source src="assets/videos/portfolio-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <h3>Orgasme kan gjøre dagen bedre</h3>
+        <p>
+          Ny dansk studie viser at det er en sammenheng mellom sexleketøy og
+          hvor lykkelig man er.
+        </p>
+        <div class="video-meta">Bymag • 23.02.2024</div>
+        <a
+          href="https://www.bymag.no/sex-sexlektoy/orgasme-kan-gjore-dagen-bedre/103600"
+          target="_blank"
+          >Se på Bymag →</a
+        >
+      </div>
+      <div class="video-item">
+        <h3>Slange på frifot i Fyllingsdalen</h3>
+        <p>
+          På lørdag fikk politiet en telefon om en tre meter lang boaslange på
+          en balkong i Fyllingsdalen. Hendelsen kan bety døden for slangen.
+        </p>
+        <div class="video-meta">Bymag • 21.03.2024</div>
+        <a
+          href="https://www.bymag.no/akvariet-slange/slange-pa-frifot-i-fyllingsdalen/111276"
+          target="_blank"
+          >Se på Bymag →</a
+        >
+      </div>
+
       <div class="video-item">
         <h3>Kjendiser i Bergen</h3>
         <p>Dette må kjendisene alltid gjøre i Bergen</p>
@@ -204,49 +215,55 @@
           Se på Tik Tok →
         </a>
       </div>
-      <div class="video-item">
-        <h3>Orgasme kan gjøre dagen bedre</h3>
-        <p>
-          Ny dansk studie viser at det er en sammenheng mellom sexleketøy og
-          hvor lykkelig man er.
-        </p>
-        <div class="video-meta">Bymag • 23.02.2024</div>
-        <a
-          href="https://www.bymag.no/sex-sexlektoy/orgasme-kan-gjore-dagen-bedre/103600"
-          target="_blank"
-          >Se på Bymag →</a
-        >
+    </section>
+
+    <h2 style="margin-top: 2.5rem">Photography</h2>
+
+    <section class="portfolio-grid">
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img1_1200.jpg" />
+          <img src="assets/images/img1.jpg" alt="Portfolio Item 1" />
+        </picture>
       </div>
-      <div class="video-item">
-        <h3>Slange på frifot i Fyllingsdalen</h3>
-        <p>
-          På lørdag fikk politiet en telefon om en tre meter lang boaslange på
-          en balkong i Fyllingsdalen. Hendelsen kan bety døden for slangen.
-        </p>
-        <div class="video-meta">Bymag • 21.03.2024</div>
-        <a
-          href="https://www.bymag.no/akvariet-slange/slange-pa-frifot-i-fyllingsdalen/111276"
-          target="_blank"
-          >Se på Bymag →</a
-        >
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img2_1200.jpg" />
+          <img src="assets/images/img2.jpg" alt="Portfolio Item 2" />
+        </picture>
+      </div>
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img3_1200.jpg" />
+          <img src="assets/images/img3.jpg" alt="Portfolio Item 3" />
+        </picture>
+      </div>
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img4_1200.jpg" />
+          <img src="assets/images/img4.jpg" alt="Portfolio Item 4" />
+        </picture>
+      </div>
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img5_1200.jpg" />
+          <img src="assets/images/img5.jpg" alt="Portfolio Item 5" />
+        </picture>
+      </div>
+      <div class="portfolio-item">
+        <picture>
+          <source srcset="assets/images/img6_1200.jpg" />
+          <img src="assets/images/img6.jpg" alt="Portfolio Item 6" />
+        </picture>
       </div>
     </section>
 
-    <section class="video-section">
-      <div class="container">
-        <h3>Portfolio Showcase</h3>
-        <p>
-          A selection of my recent work showcasing journalistic storytelling and
-          creative videography techniques.
-        </p>
-        <div class="video-container">
-          <video controls>
-            <source src="assets/videos/portfolio-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+    <div class="modal" id="imageModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged view" />
       </div>
-    </section>
+    </div>
 
     <footer>
       <div class="container">
@@ -255,5 +272,5 @@
     </footer>
   </body>
 
-  <script src="./index.js"  > </script>
+  <script src="./index.js"></script>
 </html>

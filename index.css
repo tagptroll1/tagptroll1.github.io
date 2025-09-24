@@ -21,10 +21,22 @@
             line-height: 1.6;
         }
 
+        h1 span {
+            font-style: italic;
+        }
+
+        h2 {
+            letter-spacing: 15px;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .container p {
+            text-align: center;
         }
 
         header {
@@ -55,7 +67,7 @@
 
         .portfolio-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 2rem;
             padding: 1rem 3rem;
             justify-content: center;
@@ -119,8 +131,8 @@
         }
 
         .video-container {
-            max-width: 400px;
-            margin: 0 auto;
+            max-width: 300px;
+            margin: 1rem auto 0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -133,37 +145,52 @@
 
         .video-grid {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 500px;
             padding: 0 2rem;
         }
 
         .video-item {
-            width: 400px;
+            position: relative;
             background: white;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1rem 2rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        .video-item:hover {
-            transform: translateY(-5px);
+        .video-item:before,
+        .video-item:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            border-radius: 50%;
+            height: 0.5rem;
+            width: 0.5rem;
+            color: black;
+            background-color: rgba(187, 103, 103, 0.658);
+        }
+
+        .video-item:before {
+            bottom: -20px;
+        }
+
+        .video-item:after {
+            bottom: -40px;
         }
 
         .video-item h3 {
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 1.5rem;
         }
 
         .video-item p {
             color: #3d3030;
-            margin-bottom: 1rem;
+            margin-bottom: .5rem;
         }
 
         .video-item a {
@@ -263,10 +290,10 @@
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--secondary-color);
             text-align: center;
-            margin: 3rem 0 2rem;
+            margin: 2rem 0 1rem;
             position: relative;
             padding-bottom: 1rem;
         }
