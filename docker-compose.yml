@@ -1,7 +1,7 @@
 services:
-  web:
+  karoline-nginx:
     image: nginx:alpine
-    container_name: simple-web
+    container_name: karoline
     volumes:
       - .:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
