@@ -377,6 +377,21 @@
                 font-size: 2rem;
             }
 
+            h1 span {
+                font-size: 1.5rem;
+            }
+
+
+            .portfolio-grid,
+            .video-grid {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .video-item {
+                max-width: 100%;
+            }
+
+
             .portfolio-item {
                 max-width: 100%;
             }
@@ -384,5 +399,9 @@
             .close-modal {
                 top: 10px;
                 right: 10px;
+            }
+
+            h2 {
+                letter-spacing: unset;
             }
         }
